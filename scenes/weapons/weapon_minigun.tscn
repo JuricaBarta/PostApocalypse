@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://wpnminig0001"]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_minigun.gd" id="1_minig"]
+
+[node name="WeaponMinigun" type="Node2D"]
+script = ExtResource("1_minig")
+
+[node name="Body" type="Polygon2D" parent="."]
+color = Color(0.45, 0.45, 0.5, 1)
+polygon = PackedVector2Array(-6, -8, 18, -8, 18, 8, -6, 8)
+
+[node name="Barrel" type="Polygon2D" parent="."]
+color = Color(0.25, 0.25, 0.28, 1)
+polygon = PackedVector2Array(18, -5, 38, -5, 38, 5, 18, 5)
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(40, 0)

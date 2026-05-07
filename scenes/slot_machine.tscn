@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://bl4vew8q6kb4h"]
+
+[ext_resource type="Script" uid="uid://3myiogue1wag" path="res://scripts/slot_machine.gd" id="1_agdmm"]
+
+[sub_resource type="SystemFont" id="SystemFont_agdmm"]
+subpixel_positioning = 0
+
+[node name="SlotMachine" type="Control" unique_id=925276470]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_agdmm")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1549005599]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.11764706, 0.11764706, 0.11764706, 0.93333334)
+
+[node name="Title" type="Label" parent="." unique_id=1336096087]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 1280.0
+offset_bottom = 100.0
+theme_override_fonts/font = SubResource("SystemFont_agdmm")
+theme_override_font_sizes/font_size = 28
+text = "Choose wisely"
+horizontal_alignment = 1
+
+[node name="CardsContainer" type="HBoxContainer" parent="." unique_id=720417490]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 130.0
+offset_right = 1200.0
+offset_bottom = 460.0
+theme_override_constants/separation = 20
+
+[node name="Card1" type="Panel" parent="CardsContainer" unique_id=1636965280]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="CardsContainer/Card1" unique_id=1556282661]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = -4.0
+offset_bottom = 28.0
+horizontal_alignment = 1
+
+[node name="CardBox" type="Panel" parent="CardsContainer/Card1" unique_id=2000000001]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = -58.0
+
+[node name="Icon" type="Label" parent="CardsContainer/Card1/CardBox" unique_id=1718349560]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescLabel" type="Label" parent="CardsContainer/Card1" unique_id=628257883]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -56.0
+offset_right = -4.0
+offset_bottom = -4.0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SelectButton" type="Button" parent="CardsContainer/Card1" unique_id=376470517 node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_context = NodePath("..")
+
+[node name="Card2" type="Panel" parent="CardsContainer" unique_id=506455798]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="CardsContainer/Card2" unique_id=1324915520]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = -4.0
+offset_bottom = 28.0
+horizontal_alignment = 1
+
+[node name="CardBox" type="Panel" parent="CardsContainer/Card2" unique_id=2000000002]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = -58.0
+
+[node name="Icon" type="Label" parent="CardsContainer/Card2/CardBox" unique_id=605812781]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescLabel" type="Label" parent="CardsContainer/Card2" unique_id=417386482]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -56.0
+offset_right = -4.0
+offset_bottom = -4.0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SelectButton" type="Button" parent="CardsContainer/Card2" unique_id=316890202 node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_context = NodePath("..")
+
+[node name="Card3" type="Panel" parent="CardsContainer" unique_id=391133327]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="CardsContainer/Card3" unique_id=307212969]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = -4.0
+offset_bottom = 28.0
+horizontal_alignment = 1
+
+[node name="CardBox" type="Panel" parent="CardsContainer/Card3" unique_id=2000000003]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = -58.0
+
+[node name="Icon" type="Label" parent="CardsContainer/Card3/CardBox" unique_id=1993519282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescLabel" type="Label" parent="CardsContainer/Card3" unique_id=1827737850]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -56.0
+offset_right = -4.0
+offset_bottom = -4.0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SelectButton" type="Button" parent="CardsContainer/Card3" unique_id=1250579446 node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_context = NodePath("..")

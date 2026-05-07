@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjhf4lqailvdc"]
+
+[ext_resource type="Script" uid="uid://dm81unvnwgyks" path="res://scripts/teleport_circle.gd" id="1_n2mhk"]
+
+[sub_resource type="Gradient" id="Gradient_j86yw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jxxls"]
+gradient = SubResource("Gradient_j86yw")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2gg6"]
+
+[node name="teleport_circle" type="Node2D" unique_id=747926126]
+script = ExtResource("1_n2mhk")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1221799586]
+texture = SubResource("GradientTexture2D_jxxls")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=275163264]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=893820148]
+shape = SubResource("CircleShape2D_n2gg6")

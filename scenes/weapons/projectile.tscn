@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://e7m1k5i1xkl"]
+
+[ext_resource type="Texture2D" uid="uid://b3udve1jadq8r" path="res://Images/art/Pixel.png" id="1_a85iw"]
+[ext_resource type="Script" uid="uid://bd6p0c6sbqhkv" path="res://scripts/weapons/projectile.gd" id="1_qxf0c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxf0c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a85iw")
+}],
+"loop": true,
+"name": &"Projectile",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dgwo2"]
+radius = 8.0
+height = 32.0
+
+[node name="Projectile" type="Area2D" unique_id=83218289]
+collision_layer = 2
+collision_mask = 10
+script = ExtResource("1_qxf0c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1196299826]
+scale = Vector2(0.00557074, 0.0036705662)
+sprite_frames = SubResource("SpriteFrames_qxf0c")
+animation = &"Projectile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=510102060]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_dgwo2")

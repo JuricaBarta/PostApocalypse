@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cd3vxue303cq4"]
+
+[ext_resource type="Script" uid="uid://dbkbewahm3lwx" path="res://scripts/weapons/weapon_shotgun.gd" id="1_261du"]
+
+[node name="WeaponShotgun" type="Node2D" unique_id=521542196]
+script = ExtResource("1_261du")
+
+[node name="Muzzle" type="Node2D" parent="." unique_id=321358597]
+
+[node name="shotgun sprite" type="Sprite2D" parent="." unique_id=1152282546]

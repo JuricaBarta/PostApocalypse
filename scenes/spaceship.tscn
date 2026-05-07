@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://goaaddpfk5pt"]
+
+[ext_resource type="Script" uid="uid://ccygeustierbo" path="res://scripts/spaceship.gd" id="1_yqmju"]
+
+[node name="spaceship" type="Node2D" unique_id=186897348]
+script = ExtResource("1_yqmju")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=95191182]
+light_mask = 524288
+visibility_layer = 524288

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://wpnak770001"]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_ak77.gd" id="1_ak77"]
+
+[node name="WeaponAK77" type="Node2D"]
+script = ExtResource("1_ak77")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(22, 0)

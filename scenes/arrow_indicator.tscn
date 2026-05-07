@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dnipl0filwvcw"]
+
+[ext_resource type="Script" uid="uid://8s73xsncboxd" path="res://scripts/arrow_indicator.gd" id="1_jnhxm"]
+
+[node name="ArrowIndicator" type="Node2D" unique_id=1311324971]
+script = ExtResource("1_jnhxm")
+arrow_color = Color(0.2, 0.8, 0.21568628, 1)

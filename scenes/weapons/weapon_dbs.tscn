@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://wpndbs00001"]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_dbs.gd" id="1_dbs"]
+
+[node name="WeaponDBS" type="Node2D"]
+script = ExtResource("1_dbs")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(18, 0)

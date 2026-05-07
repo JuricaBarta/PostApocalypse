@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bb6ea42r7byw0"]
+
+[ext_resource type="Script" uid="uid://db35x422v2m1o" path="res://scripts/portal.gd" id="1_v0xau"]
+[ext_resource type="Texture2D" uid="uid://drojlpxpj3dhu" path="res://Images/art/Circle.png" id="2_1ffj6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jr6l0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1ffj6")
+}],
+"loop": true,
+"name": &"Portal",
+"speed": 5.0
+}]
+
+[node name="Portal" type="Node2D" unique_id=1304156966]
+script = ExtResource("1_v0xau")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=662621648]
+sprite_frames = SubResource("SpriteFrames_jr6l0")
+animation = &"Portal"
+
+[node name="Timer" type="Timer" parent="." unique_id=1078212272]
+wait_time = 1.2
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

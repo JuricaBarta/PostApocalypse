@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://c2c13l7as15xm"]
+
+[ext_resource type="Script" uid="uid://bv4v2k7pwvwhn" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://c7khxtk6dtljk" path="res://scenes/map.tscn" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bmif4taihtcnb" path="res://scenes/player.tscn" id="2_tbgi4"]
+[ext_resource type="Script" uid="uid://d37n3nkr2b352" path="res://scripts/wave_manager.gd" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://e7m1k5i1xkl" path="res://scenes/projectile.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://vvrv3u7hi8sx" path="res://scenes/enemies/enemy.tscn" id="5_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bb6ea42r7byw0" path="res://scenes/portal.tscn" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://bkxa5le6562o4" path="res://scenes/enemies/enemy_tank.tscn" id="7_choun"]
+[ext_resource type="Script" uid="uid://bxfrslkln3j6a" path="res://scripts/hud.gd" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://bl4vew8q6kb4h" path="res://scenes/slot_machine.tscn" id="9_85g3d"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_o6xl0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85g3d"]
+bg_color = Color(0.3019608, 0.7921569, 0.43137255, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tipki"]
+viewport_path = NodePath("UI/HUD/MinimapContainer/SubViewport")
+
+[node name="Main" type="Node2D" unique_id=519774721]
+y_sort_enabled = true
+script = ExtResource("1_jyhfs")
+
+[node name="Map" parent="." unique_id=1290336278 instance=ExtResource("2_o6xl0")]
+
+[node name="Player" parent="." unique_id=616323725 instance=ExtResource("2_tbgi4")]
+projectile_scene = ExtResource("4_tipki")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2037712575]
+
+[node name="WaveManager" type="Node2D" parent="." unique_id=140134192]
+script = ExtResource("3_sugp2")
+enemy_scene = ExtResource("5_o6xl0")
+tank_scene = ExtResource("7_choun")
+portal_scene = ExtResource("6_tipki")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2064558144]
+position = Vector2(1, 0)
+navigation_polygon = SubResource("NavigationPolygon_o6xl0")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=794301660]
+layer = 20
+
+[node name="SlotMachine" parent="UI" unique_id=925276470 instance=ExtResource("9_85g3d")]
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" type="Control" parent="UI" unique_id=1814714144]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_tipki")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/HUD" unique_id=454561502]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 640.0
+offset_right = 1072.0
+offset_bottom = 659.0
+theme_override_styles/background = SubResource("StyleBoxFlat_tipki")
+theme_override_styles/fill = SubResource("StyleBoxFlat_85g3d")
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="PendingLabel" type="Label" parent="UI/HUD" unique_id=1665991870]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MinimapContainer" type="Control" parent="UI/HUD" unique_id=824497602]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="UI/HUD/MinimapContainer" unique_id=911232927]
+size = Vector2i(300, 300)
+
+[node name="Camera2D" type="Camera2D" parent="UI/HUD/MinimapContainer/SubViewport" unique_id=427338984]
+
+[node name="MinimapDisplay" type="TextureRect" parent="UI/HUD/MinimapContainer" unique_id=458944704]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ViewportTexture_tipki")
+expand_mode = 1
+stretch_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerDot" type="ColorRect" parent="UI/HUD/MinimapContainer" unique_id=1670997923]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.4
+anchor_right = 0.2
+anchor_bottom = 0.4
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HPLabel" type="Label" parent="UI/HUD" unique_id=950011312]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 104.0
+offset_bottom = 95.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HPBar" type="ProgressBar" parent="UI/HUD" unique_id=1718699889]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.275
+anchor_top = 0.4
+anchor_right = 4.7
+anchor_bottom = 0.4
+offset_right = 4.0
+offset_bottom = 27.0
+fill_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelLabel" type="Label" parent="UI/HUD" unique_id=1297286335]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.4
+anchor_top = -0.6
+anchor_right = 5.4
+anchor_bottom = -0.6
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 104.0
+offset_bottom = 63.0
+metadata/_edit_use_anchors_ = true

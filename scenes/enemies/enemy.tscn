@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://vvrv3u7hi8sx"]
+
+[ext_resource type="Script" uid="uid://b64ifeyvct1xi" path="res://scripts/enemy.gd" id="1_38ino"]
+[ext_resource type="Texture2D" uid="uid://cik70jsdy3e2s" path="res://Images/art/Mobs/MobOneLeft.png" id="2_38ino"]
+[ext_resource type="Texture2D" uid="uid://dd46335pqxq8u" path="res://Images/art/Mobs/MobOneRight.png" id="3_fcftc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vmn3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_38ino")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fcftc")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh1qo"]
+radius = 8.0
+height = 24.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1389861685]
+z_index = 1
+z_as_relative = false
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_38ino")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=553046033]
+scale = Vector2(0.12571535, 0.14222221)
+sprite_frames = SubResource("SpriteFrames_vmn3u")
+animation = &"Walk"
+speed_scale = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1029648569]
+rotation = 3.1415927
+shape = SubResource("CapsuleShape2D_rh1qo")
+
+[node name="OutlineSprite" type="Sprite2D" parent="." unique_id=2128120035]
+z_index = 10
+z_as_relative = false
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1670918247]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=826791007]
+path_max_distance = 501.0
+avoidance_enabled = true

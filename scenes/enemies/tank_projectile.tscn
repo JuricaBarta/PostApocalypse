@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dx5puybtuol0d"]
+
+[ext_resource type="Script" uid="uid://do8yhfjunlfah" path="res://scripts/TankProjectile.gd" id="1_he75a"]
+[ext_resource type="Texture2D" uid="uid://bw62kt1y5rnye" path="res://Images/art/BulletMobOne.png" id="2_88042"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_etybv"]
+radius = 4.0
+height = 102.0
+
+[node name="TankProjectile" type="Area2D" unique_id=826130160]
+scale = Vector2(0.3, 0.3)
+collision_layer = 16
+collision_mask = 13
+script = ExtResource("1_he75a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489671602]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_88042")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=472090053]
+position = Vector2(0, -50)
+shape = SubResource("CapsuleShape2D_etybv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

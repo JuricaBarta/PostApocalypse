@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://wpnrkt000001"]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_rocket.gd" id="1_rocket"]
+
+[node name="WeaponRocket" type="Node2D"]
+script = ExtResource("1_rocket")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(24, 0)

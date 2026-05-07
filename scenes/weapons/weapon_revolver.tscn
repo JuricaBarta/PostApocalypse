@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://demfgmfc23e77"]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_revolver.gd" id="1_revlv"]
+
+[node name="WeaponRevolver" type="Node2D"]
+script = ExtResource("1_revlv")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(20, 0)

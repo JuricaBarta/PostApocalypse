@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cy5j3n2f7c4df"]
+
+[ext_resource type="Script" uid="uid://86iepbgoisam" path="res://scripts/pickup.gd" id="1_5avqc"]
+[ext_resource type="Texture2D" uid="uid://d3ipn0le4vda8" path="res://Images/magnet_pickup_1.png" id="2_5avqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hluwh"]
+size = Vector2(32, 32)
+
+[node name="MagnetOrb" type="Area2D" unique_id=2146469944]
+rotation = 3.3161256
+collision_mask = 16
+script = ExtResource("1_5avqc")
+type = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=295320331]
+position = Vector2(1.9073486e-06, -1.9073486e-06)
+scale = Vector2(0.046875, 0.046875)
+texture = ExtResource("2_5avqc")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814616130]
+shape = SubResource("RectangleShape2D_hluwh")

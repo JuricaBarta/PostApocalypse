@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://wpnsnipr0001"]
+
+[ext_resource type="Script" path="res://scripts/weapons/weapon_sniper.gd" id="1_snipr"]
+
+[node name="WeaponSniper" type="Node2D"]
+script = ExtResource("1_snipr")
+
+[node name="Body" type="Polygon2D" parent="."]
+color = Color(0.22, 0.18, 0.14, 1)
+polygon = PackedVector2Array(-6, -4, 12, -4, 12, 4, -6, 4)
+
+[node name="Barrel" type="Polygon2D" parent="."]
+color = Color(0.12, 0.12, 0.12, 1)
+polygon = PackedVector2Array(12, -2.5, 50, -2.5, 50, 2.5, 12, 2.5)
+
+[node name="Scope" type="Polygon2D" parent="."]
+color = Color(0.05, 0.05, 0.05, 1)
+polygon = PackedVector2Array(0, -8, 8, -8, 8, -4, 0, -4)
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(52, 0)
